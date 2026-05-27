@@ -136,5 +136,6 @@ OH Radical의 글로벌 디지털 브랜드 플랫폼은 **브랜드 철학**을
 | [README.md](../../README.md) | 저장소 전체 구조 및 리포지토리 맵 표준 인덱스 |
 | [project-overview.md](../project-overview.md) | 브랜드 전체 핵심 전략 및 개발 구현 단계별 가이드라인 |
 | [brand-core.md](../10-brand/brand-core.md) | 회장님 슬로건 철학 및 6대 핵심가치 정의서 |
+| [brand-moodboard-strategy.md](../20-design/brand-moodboard-strategy.md) | 글로벌 비주얼 가이드라인 및 디자인 톤앤매너 무드보드 정의서 |
 | [OH-Radical-UX-Flow-Strategy.md](OH-Radical-UX-Flow-Strategy.md) | 메인 페이지의 단계별 감정선 및 인터랙션 실무 기획서 |
 

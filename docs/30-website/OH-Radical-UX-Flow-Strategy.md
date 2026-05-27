@@ -712,6 +712,7 @@ Section 8 (Final CTA)     →  결심, 액션, "지금 문의해보자"
 | [README.md](../../README.md) | 저장소 전체 구조 및 리포지토리 맵 표준 인덱스 |
 | [project-overview.md](../project-overview.md) | 브랜드 전체 핵심 전략 및 개발 구현 단계별 가이드라인 |
 | [brand-core.md](../10-brand/brand-core.md) | 회장님 슬로건 철학 및 6대 핵심가치 정의서 |
+| [brand-moodboard-strategy.md](../20-design/brand-moodboard-strategy.md) | 글로벌 비주얼 가이드라인 및 디자인 톤앤매너 무드보드 정의서 |
 | [site-architecture.md](site-architecture.md) | 7대 메뉴 IA 및 이머시브 UX 디자인 연출 시안 |
 
 ---

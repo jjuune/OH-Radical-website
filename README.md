@@ -102,6 +102,9 @@ OH-Radical-website/
 │   ├── 📂 10-brand/           # 🧬 브랜드 정체성 아카이브
 │   │   └── 📄 brand-core.md    # 6대 핵심가치 & 회장님 철학 정의서
 │   │
+│   ├── 📂 20-design/          # 🎨 브랜드 비주얼 가이드라인
+│   │   └── 📄 brand-moodboard-strategy.md # 메인 페이지 MVP 디자인 무드보드 가이드라인
+│   │
 │   ├── 📂 30-website/         # 🗺️ 웹사이트 UX / UI 설계함
 │   │   └── 📄 site-architecture.md # 7대 메뉴 IA 및 이머시브 UX 설계서
 │   │
@@ -138,6 +141,7 @@ OH-Radical-website/
 |---|---|
 | [project-overview.md](docs/project-overview.md) | 브랜드 전체 핵심 전략 및 개발 구현 단계별 가이드라인 |
 | [brand-core.md](docs/10-brand/brand-core.md) | 회장님 슬로건 철학 및 6대 핵심가치 정의서 |
+| [brand-moodboard-strategy.md](docs/20-design/brand-moodboard-strategy.md) | 글로벌 비주얼 가이드라인 및 디자인 톤앤매너 무드보드 정의서 |
 | [site-architecture.md](docs/30-website/site-architecture.md) | 7대 페이지 구조(IA) 및 이머시브 UX 디자인 연출 시안 |
 | [OH-Radical-UX-Flow-Strategy.md](docs/30-website/OH-Radical-UX-Flow-Strategy.md) | 메인 페이지의 단계별 감정선 및 인터랙션 실무 기획서 |
 | [backlog.md](docs/99-backlog/backlog.md) | 구현 범위별 P0/P1/P2 기능 요구사항 대장 및 백로그 |

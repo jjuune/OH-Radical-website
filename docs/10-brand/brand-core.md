@@ -86,6 +86,7 @@ OH Radical은 **사람 중심의 가치(Human First)**를 수호하고, **환경
 |---|---|
 | [README.md](../../README.md) | 저장소 전체 구조 및 리포지토리 맵 표준 인덱스 |
 | [project-overview.md](../project-overview.md) | 브랜드 전체 핵심 전략 및 개발 구현 단계별 가이드라인 |
+| [brand-moodboard-strategy.md](../20-design/brand-moodboard-strategy.md) | 글로벌 비주얼 가이드라인 및 디자인 톤앤매너 무드보드 정의서 |
 | [site-architecture.md](../30-website/site-architecture.md) | 7대 메뉴 IA 및 이머시브 UX 디자인 연출 시안 |
 | [OH-Radical-UX-Flow-Strategy.md](../30-website/OH-Radical-UX-Flow-Strategy.md) | 메인 페이지의 단계별 감정선 및 인터랙션 실무 기획서 |
 

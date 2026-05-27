@@ -126,3 +126,15 @@
 
 ## 🧱 Summary (요약)
 OH Radical의 글로벌 디지털 브랜드 플랫폼은 **브랜드 철학**을 구심점으로 삼아 **미래 산업과 기술 방향성**을 매력적으로 소통하고, 제품과 솔루션을 **직관적인 UX**로 매칭시켜, 전 세계 고객에게 **하이크래스 브랜드 경험**을 제공하는 하이테크 환경 플랫폼 구축을 지향합니다.
+
+---
+
+# 🔗 관련 기획 문서 링크 (Related Documents)
+
+| 문서명 (Link) | 목적 및 설명 |
+|---|---|
+| [README.md](../../README.md) | 저장소 전체 구조 및 리포지토리 맵 표준 인덱스 |
+| [project-overview.md](../project-overview.md) | 브랜드 전체 핵심 전략 및 개발 구현 단계별 가이드라인 |
+| [brand-core.md](../10-brand/brand-core.md) | 회장님 슬로건 철학 및 6대 핵심가치 정의서 |
+| [OH-Radical-UX-Flow-Strategy.md](OH-Radical-UX-Flow-Strategy.md) | 메인 페이지의 단계별 감정선 및 인터랙션 실무 기획서 |
+

@@ -705,5 +705,16 @@ Section 8 (Final CTA)     →  결심, 액션, "지금 문의해보자"
 
 ---
 
+# 🔗 관련 기획 문서 링크 (Related Documents)
+
+| 문서명 (Link) | 목적 및 설명 |
+|---|---|
+| [README.md](../../README.md) | 저장소 전체 구조 및 리포지토리 맵 표준 인덱스 |
+| [project-overview.md](../project-overview.md) | 브랜드 전체 핵심 전략 및 개발 구현 단계별 가이드라인 |
+| [brand-core.md](../10-brand/brand-core.md) | 회장님 슬로건 철학 및 6대 핵심가치 정의서 |
+| [site-architecture.md](site-architecture.md) | 7대 메뉴 IA 및 이머시브 UX 디자인 연출 시안 |
+
+---
+
 *© OH Radical — UX Flow Strategy Document v1.0*  
 *작성 기준: project-overview.md / brand-core.md / README.md 기반*

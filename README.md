@@ -139,6 +139,7 @@ OH-Radical-website/
 | [project-overview.md](docs/project-overview.md) | 브랜드 전체 핵심 전략 및 개발 구현 단계별 가이드라인 |
 | [brand-core.md](docs/10-brand/brand-core.md) | 회장님 슬로건 철학 및 6대 핵심가치 정의서 |
 | [site-architecture.md](docs/30-website/site-architecture.md) | 7대 페이지 구조(IA) 및 이머시브 UX 디자인 연출 시안 |
+| [OH-Radical-UX-Flow-Strategy.md](docs/30-website/OH-Radical-UX-Flow-Strategy.md) | 메인 페이지의 단계별 감정선 및 인터랙션 실무 기획서 |
 | [backlog.md](docs/99-backlog/backlog.md) | 구현 범위별 P0/P1/P2 기능 요구사항 대장 및 백로그 |
 
 ---

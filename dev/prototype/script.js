@@ -1,7 +1,7 @@
-// OH Radical Prototype Interactive Script
+// OH Radical Prototype Interactive Script (v2.0)
 
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Canvas Particle Field (Invisible Protection) ---
+  // --- Canvas Particle Field (Clean Air Flows) ---
   const canvas = document.getElementById("particle-field");
   const ctx = canvas.getContext("2d");
 
@@ -20,15 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.style.height = `${height}px`;
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-    // Number of particles depends on screen size
-    const count = Math.min(100, Math.floor((width * height) / 15000));
+    // Subtle particles count based on screen size
+    const count = Math.min(60, Math.floor((width * height) / 25000));
     particles = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.18,
-      vy: (Math.random() - 0.5) * 0.18,
-      radius: Math.random() * 2.2 + 0.4,
-      alpha: Math.random() * 0.4 + 0.08,
+      vx: (Math.random() - 0.5) * 0.15,
+      vy: (Math.random() - 0.5) * 0.15,
+      radius: Math.random() * 2 + 0.5,
+      alpha: Math.random() * 0.2 + 0.05,
       baseAlpha: 0,
     }));
     particles.forEach(p => p.baseAlpha = p.alpha);
@@ -38,29 +38,26 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.clearRect(0, 0, width, height);
 
     particles.forEach((particle) => {
-      // Calculate distance to mouse pointer
+      // Gentle movement interaction with mouse pointer
       const dx = particle.x - pointer.x;
       const dy = particle.y - pointer.y;
       const distance = Math.hypot(dx, dy);
 
-      // Smooth repulsion force from mouse
-      if (distance < 120) {
-        const force = (120 - distance) / 120;
-        // Ease the movement away
-        particle.x += (dx / distance) * force * 1.5;
-        particle.y += (dy / distance) * force * 1.5;
-        particle.alpha = particle.baseAlpha * 1.8; // Brighten near mouse
+      if (distance < 150) {
+        const force = (150 - distance) / 150;
+        particle.x += (dx / distance) * force * 1.2;
+        particle.y += (dy / distance) * force * 1.2;
+        particle.alpha = particle.baseAlpha * 1.6;
       } else {
-        // Slow recovery back to base alpha
         if (particle.alpha > particle.baseAlpha) {
-          particle.alpha -= 0.01;
+          particle.alpha -= 0.005;
         }
       }
 
       particle.x += particle.vx;
       particle.y += particle.vy;
 
-      // Wrap around screen edges
+      // Screen boundary wrap
       if (particle.x < -10) particle.x = width + 10;
       if (particle.x > width + 10) particle.x = -10;
       if (particle.y < -10) particle.y = height + 10;
@@ -68,14 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       ctx.beginPath();
       ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(115, 247, 212, ${particle.alpha})`;
+      // Soft Mint Active Dispersal Particles Color
+      ctx.fillStyle = `rgba(46, 201, 160, ${particle.alpha})`;
       ctx.fill();
     });
 
     requestAnimationFrame(drawParticles);
   }
 
-  // Set listeners for canvas
   window.addEventListener("resize", resizeCanvas);
   window.addEventListener("pointermove", (e) => {
     pointer.x = e.clientX;
@@ -86,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pointer.y = -9999;
   });
 
-  // Initialize Canvas
   resizeCanvas();
   drawParticles();
 
@@ -121,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Interactive Slides (Why It Matters, 3-Zero, Technology) ---
+  // --- Interactive Slides (Why Clean Air & Technology Preview) ---
   function setupInteractiveSection(sectionId, counterId, dotSelector, itemSelector, panelSelector) {
     const section = document.getElementById(sectionId);
     if (!section) return;
@@ -137,13 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function activateSlide(index) {
       activeIndex = index;
-
-      // Update counters (e.g., 01/05)
       if (counter) {
-        counter.textContent = `${String(activeIndex + 1).padStart(2, '0')}/${String(totalCount).padStart(2, '0')}`;
+        counter.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(totalCount).padStart(2, '0')}`;
       }
-
-      // Update active classes for dots, text items, visual panels
       dots.forEach((dot, idx) => dot.classList.toggle("active", idx === activeIndex));
       items.forEach((item, idx) => item.classList.toggle("active", idx === activeIndex));
       panels.forEach((panel, idx) => panel.classList.toggle("active", idx === activeIndex));
@@ -154,26 +146,23 @@ document.addEventListener("DOMContentLoaded", () => {
       autoPlayTimer = setInterval(() => {
         let nextIndex = (activeIndex + 1) % totalCount;
         activateSlide(nextIndex);
-      }, 5500); // 5.5 seconds per slide
+      }, 5500);
     }
 
     function stopAutoPlay() {
       if (autoPlayTimer) clearInterval(autoPlayTimer);
     }
 
-    // Dot click listeners
     dots.forEach((dot) => {
       dot.addEventListener("click", () => {
         const index = parseInt(dot.getAttribute("data-index"), 10);
         activateSlide(index);
-        startAutoPlay(); // Reset timer on manual click
+        startAutoPlay();
       });
     });
 
-    // Start auto cycle
     startAutoPlay();
 
-    // Pause auto play when section is not visible
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -186,17 +175,128 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
   }
 
-  // Setup Section 2: Why It Matters
-  setupInteractiveSection("why", "why-counter", ".threat-indicators .dot", ".threat-item", ".split-right .visual-panel");
+  // Setup Section 3: Why Clean Air
+  setupInteractiveSection("why", "why-counter", ".threat-indicators .dot", ".threat-item", "#why .split-right .visual-panel");
   
-  // Setup Section 3: 3-Zero System
-  setupInteractiveSection("three-zero", "zero-counter", ".zero-indicators .dot", ".zero-item", "#three-zero .split-right .visual-panel");
-
   // Setup Section 4: Technology Preview
   setupInteractiveSection("tech", "tech-counter", ".tech-indicators .dot", ".tech-item", "#tech .split-right .visual-panel");
 
 
-  // --- Counter Animations for Proof & Data (Section 5) ---
+  // --- Solutions Horizontal Slider & Tabs (Section 5) ---
+  const slider = document.getElementById("solutions-slider");
+  const slides = document.querySelectorAll(".solution-slide");
+  const tabs = document.querySelectorAll(".sol-tab");
+  const btnNext = document.getElementById("slider-btn-next");
+  let activeSlideIndex = 0;
+
+  function updateSlider(index) {
+    activeSlideIndex = index;
+    
+    // Slide transition offset calculation
+    const gap = 16;
+    const slideWidth = slides[0].offsetWidth;
+    const offset = -(slideWidth + gap) * activeSlideIndex;
+    
+    slider.style.transform = `translateX(${offset}px)`;
+
+    // Update active classes
+    slides.forEach((slide, idx) => slide.classList.toggle("active", idx === activeSlideIndex));
+    tabs.forEach((tab, idx) => tab.classList.toggle("active", idx === activeSlideIndex));
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const index = parseInt(tab.getAttribute("data-index"), 10);
+      updateSlider(index);
+    });
+  });
+
+  if (btnNext) {
+    btnNext.addEventListener("click", () => {
+      const nextIndex = (activeSlideIndex + 1) % slides.length;
+      updateSlider(nextIndex);
+    });
+  }
+
+
+  // --- Space Simulator Logic (Section 5.5) ---
+  const simTypeBtns = document.querySelectorAll(".sim-type-btn");
+  const simAreaSlider = document.getElementById("sim-area");
+  const simAreaVal = document.getElementById("sim-area-val");
+  const simRunBtn = document.getElementById("sim-run");
+  const simResultBadge = document.getElementById("sim-result-badge");
+  const simResultType = document.getElementById("sim-result-type");
+  
+  const valKill = document.getElementById("sim-kill");
+  const valCost = document.getElementById("sim-cost");
+  const valModules = document.getElementById("sim-modules");
+  const valResidue = document.getElementById("sim-residue");
+
+  let selectedType = "farm";
+  let selectedTypeName = "스마트팜";
+
+  // Type selection handler
+  simTypeBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      simTypeBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      selectedType = btn.getAttribute("data-type");
+      selectedTypeName = btn.textContent.trim().substring(2); // Strip icon prefix
+      updateResultText();
+    });
+  });
+
+  // Slider update
+  simAreaSlider.addEventListener("input", (e) => {
+    simAreaVal.textContent = `${e.target.value} m²`;
+    updateResultText();
+  });
+
+  function updateResultText() {
+    simResultType.textContent = `${selectedTypeName} · ${simAreaSlider.value} m²`;
+  }
+
+  simRunBtn.addEventListener("click", () => {
+    // Show Running State
+    simResultBadge.textContent = "RUNNING";
+    simResultBadge.style.background = "#FFC107";
+    
+    valKill.textContent = "Analyzing...";
+    valCost.textContent = "Calculating...";
+    valModules.textContent = "Estimating...";
+    valResidue.textContent = "Measuring...";
+
+    setTimeout(() => {
+      const area = parseInt(simAreaSlider.value, 10);
+      
+      // 1. Virus Kill rate
+      let killRate = "99.90%";
+      if (selectedType === "hospital") killRate = "99.99%";
+      else if (selectedType === "farm") killRate = "99.95%";
+      
+      // 2. Cost Saved (est. 12,000 KRW per m2 annually)
+      const costSaved = area * 12000;
+      const formattedCost = new Intl.NumberFormat('ko-KR').format(costSaved) + " 원";
+
+      // 3. Recommended Modules (1 module covers ~60m2)
+      const modules = Math.ceil(area / 60) + " EA";
+
+      // 4. Chemical Residue
+      const residue = "0.00% (Clean H₂O)";
+
+      // Update Results HUD
+      valKill.textContent = killRate;
+      valCost.textContent = formattedCost;
+      valModules.textContent = modules;
+      valResidue.textContent = residue;
+
+      simResultBadge.textContent = "COMPLETE";
+      simResultBadge.style.background = "var(--mint-core)";
+    }, 700);
+  });
+
+
+  // --- Counter Animations for Proof & Data (Section 6) ---
   const proofSection = document.getElementById("proof");
   const countElements = document.querySelectorAll(".count-num");
   let countsAnimated = false;
@@ -206,62 +306,45 @@ document.addEventListener("DOMContentLoaded", () => {
     countsAnimated = true;
 
     countElements.forEach((el) => {
-      const isInfinite = el.getAttribute("data-infinite") === "true";
-      
-      if (isInfinite) {
-        // For Infinity symbol, count to 10 and then fade in the infinity symbol
-        let current = 0;
-        const timer = setInterval(() => {
-          current++;
-          el.textContent = current;
-          if (current >= 10) {
-            clearInterval(timer);
-            el.textContent = "∞";
-          }
-        }, 80);
-      } else {
-        const target = parseFloat(el.getAttribute("data-target"));
-        const isDecimal = target % 1 !== 0;
-        const duration = 1500; // 1.5 seconds
-        const startTime = performance.now();
+      const target = parseFloat(el.getAttribute("data-target"));
+      const isDecimal = target % 1 !== 0;
+      const duration = 1500;
+      const startTime = performance.now();
 
-        function updateCount(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          
-          // Ease-out quad
-          const easeProgress = progress * (2 - progress);
-          const val = easeProgress * target;
-
-          el.textContent = isDecimal ? val.toFixed(1) : Math.floor(val);
-
-          if (progress < 1) {
-            requestAnimationFrame(updateCount);
-          } else {
-            el.textContent = isDecimal ? target.toFixed(1) : target;
-          }
-        }
+      function updateCount(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
         
-        requestAnimationFrame(updateCount);
+        // Ease-out quad
+        const easeProgress = progress * (2 - progress);
+        const val = easeProgress * target;
+
+        el.textContent = isDecimal ? val.toFixed(2) : Math.floor(val);
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          el.textContent = isDecimal ? target.toFixed(2) : target;
+        }
       }
+      
+      requestAnimationFrame(updateCount);
     });
   }
 
-  // Intersection Observer for Proof Section Counter
   const countObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         animateCounts();
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
   
   if (proofSection) {
     countObserver.observe(proofSection);
   }
 
-
-  // --- General Fade In on Scroll (Intersection Observer) ---
+  // --- General Fade In on Scroll ---
   const revealElements = document.querySelectorAll(".reveal");
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -269,7 +352,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entry.target.classList.add("is-visible");
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
 
   revealElements.forEach(el => revealObserver.observe(el));
 });

@@ -25,7 +25,7 @@
     <header class="site-header" data-header>
       <a class="brand" href="#hero" aria-label="OH Radical Home">
         <img
-          src="../assets/logo/oh_radical_ci.svg"
+          src="./assets/logo/oh_radical_ci.svg"
           alt="OH Radical Logo"
           class="brand-logo"
         />
@@ -120,7 +120,7 @@
           <div class="concept-card">
             <div class="concept-icon">💧</div>
             <h3>Convert</h3>
-            <p class="concept-subtitle">물(H₂O)로 완전히 전환</p>
+            <p class="concept-subtitle">물(H<sub>2</sub>O)로 완전히 전환</p>
             <a href="#tech" class="concept-link">Learn more &gt;</a>
           </div>
           <div class="concept-card">
@@ -170,11 +170,11 @@
               </div>
             </div>
             <div class="threat-indicators">
-              <span class="dot active" data-index="0"></span>
-              <span class="dot" data-index="1"></span>
-              <span class="dot" data-index="2"></span>
-              <span class="dot" data-index="3"></span>
-              <span class="dot" data-index="4"></span>
+              <span class="dot active" data-index="0"><span class="dot-num">01</span> Viruses</span>
+              <span class="dot" data-index="1"><span class="dot-num">02</span> VOCs</span>
+              <span class="dot" data-index="2"><span class="dot-num">03</span> Odors</span>
+              <span class="dot" data-index="3"><span class="dot-num">04</span> Fumes</span>
+              <span class="dot" data-index="4"><span class="dot-num">05</span> PM2.5</span>
             </div>
           </div>
           <div class="split-right">
@@ -252,7 +252,7 @@
                 <div class="hud-card">
                   <div class="hud-title">CNT SYSTEM STATUS</div>
                   <div class="hud-row"><span>Reaction Time</span><span class="hud-value font-mono">&lt; 0.3 sec</span></div>
-                  <div class="hud-row"><span>Byproduct</span><span class="hud-value font-mono">H₂O only</span></div>
+                  <div class="hud-row"><span>Byproduct</span><span class="hud-value font-mono">Clean H<sub>2</sub>O</span></div>
                 </div>
               </div>
               <div class="tech-item" data-index="1">
@@ -269,7 +269,7 @@
               <div class="tech-item" data-index="2">
                 <h3 class="tech-title">The only byproduct is water.</h3>
                 <p class="tech-copy">
-                  OH Radical이 바이러스 외벽의 수소 이온(H)을 분리 탈취하여 단백질 세포 구조를 해체하고 무해화합니다. 반응 완료 후 최종적으로 생성되는 물질은 오직 순수한 미세 수증기(H₂O)뿐입니다.
+                  OH Radical이 바이러스 외벽의 수소 이온(H)을 분리 탈취하여 단백질 세포 구조를 해체하고 무해화합니다. 반응 완료 후 최종적으로 생성되는 물질은 오직 순수한 미세 수증기(H<sub>2</sub>O)뿐입니다.
                 </p>
                 <div class="hud-card">
                   <div class="hud-title">SAFETY RATING</div>
@@ -318,9 +318,9 @@
                     <text x="60" y="104" font-size="11" text-anchor="middle" fill="var(--text-primary)" font-weight="bold">·OH</text>
                     <path d="M 85 100 L 115 100" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="2,2" />
                     <circle cx="140" cy="100" r="20" fill="rgba(114, 223, 195, 0.15)" stroke="var(--mint-light)" stroke-width="1" />
-                    <text x="140" y="104" font-size="10" text-anchor="middle" fill="var(--text-primary)" font-weight="bold">H₂O</text>
+                    <text x="140" y="104" font-size="10" text-anchor="middle" fill="var(--text-primary)" font-weight="bold">H<tspan dy="3" font-size="7">2</tspan><tspan dy="-3">O</tspan></text>
                   </svg>
-                  <div class="tech-caption">Byproduct Reduction → H₂O Vapor</div>
+                  <div class="tech-caption">Byproduct Reduction → H<sub>2</sub>O Vapor</div>
                 </div>
               </div>
             </div>
@@ -342,37 +342,39 @@
           <div class="solutions-right">
             <!-- 슬라이더 영역 -->
             <div class="slider-wrapper">
-              <div class="solutions-slider" id="solutions-slider">
-                <div class="solution-slide active" data-index="0">
-                  <div class="slide-image-placeholder img-farm"></div>
-                  <div class="slide-meta">
-                    <span class="slide-icon">🌿</span>
-                    <h4>Smart Farm</h4>
-                    <p>그린 바이오 재배 온실 내 곰팡이 병충해 방제 및 작물 성장 촉진</p>
+              <div class="slider-track">
+                <div class="solutions-slider" id="solutions-slider">
+                  <div class="solution-slide active" data-index="0">
+                    <div class="slide-image-placeholder img-farm"></div>
+                    <div class="slide-meta">
+                      <span class="slide-icon">🌿</span>
+                      <h4>Smart Farm</h4>
+                      <p>그린 바이오 재배 온실 내 곰팡이 병충해 방제 및 작물 성장 촉진</p>
+                    </div>
                   </div>
-                </div>
-                <div class="solution-slide" data-index="1">
-                  <div class="slide-image-placeholder img-hospital"></div>
-                  <div class="slide-meta">
-                    <span class="slide-icon">🏥</span>
-                    <h4>Hospital</h4>
-                    <p>중환자실, 병원 대기실 내 공기 중 바이러스 전파 및 교차 감염의 입체적 차단</p>
+                  <div class="solution-slide" data-index="1">
+                    <div class="slide-image-placeholder img-hospital"></div>
+                    <div class="slide-meta">
+                      <span class="slide-icon">🏥</span>
+                      <h4>Hospital</h4>
+                      <p>중환자실, 병원 대기실 내 공기 중 바이러스 전파 및 교차 감염의 입체적 차단</p>
+                    </div>
                   </div>
-                </div>
-                <div class="solution-slide" data-index="2">
-                  <div class="slide-image-placeholder img-airport"></div>
-                  <div class="slide-meta">
-                    <span class="slide-icon">✈️</span>
-                    <h4>Airport</h4>
-                    <p>터미널 등 초대형 다중이용 인프라의 실시간 대량 오염 분해 및 스마트 공조 제어</p>
+                  <div class="solution-slide" data-index="2">
+                    <div class="slide-image-placeholder img-airport"></div>
+                    <div class="slide-meta">
+                      <span class="slide-icon">✈️</span>
+                      <h4>Airport</h4>
+                      <p>터미널 등 초대형 다중이용 인프라의 실시간 대량 오염 분해 및 스마트 공조 제어</p>
+                    </div>
                   </div>
-                </div>
-                <div class="solution-slide" data-index="3">
-                  <div class="slide-image-placeholder img-school"></div>
-                  <div class="slide-meta">
-                    <span class="slide-icon">🎓</span>
-                    <h4>School</h4>
-                    <p>보육 및 각급 교육기관 내 집단 감염 차단 및 맑은 실내 공기로 학습력 극대화</p>
+                  <div class="solution-slide" data-index="3">
+                    <div class="slide-image-placeholder img-school"></div>
+                    <div class="slide-meta">
+                      <span class="slide-icon">🎓</span>
+                      <h4>School</h4>
+                      <p>보육 및 각급 교육기관 내 집단 감염 차단 및 맑은 실내 공기로 학습력 극대화</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -641,7 +643,7 @@
     <footer class="site-footer">
       <div class="footer-top">
         <div class="footer-brand-area">
-          <img src="../assets/logo/oh_radical_ci.svg" alt="OH Radical Logo" class="footer-logo" />
+          <img src="./assets/logo/oh_radical_ci.svg" alt="OH Radical Logo" class="footer-logo" />
           <p class="footer-slogan">Human First. Earth Always.</p>
         </div>
         <div class="footer-links">

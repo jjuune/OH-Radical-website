@@ -282,13 +282,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const modules = Math.ceil(area / 60) + " EA";
 
       // 4. Chemical Residue
-      const residue = "0.00% (Clean H₂O)";
+      const residue = "0.00% (Clean H<sub>2</sub>O)";
 
       // Update Results HUD
       valKill.textContent = killRate;
       valCost.textContent = formattedCost;
       valModules.textContent = modules;
-      valResidue.textContent = residue;
+      valResidue.innerHTML = residue;
 
       simResultBadge.textContent = "COMPLETE";
       simResultBadge.style.background = "var(--mint-core)";
